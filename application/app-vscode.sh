@@ -10,8 +10,8 @@ cd -
 sudo apt update -y
 sudo apt install -y code
 
-mkdir -p ~/.config/Code/User
-cp ~/.local/share/omakub/configs/vscode.json ~/.config/Code/User/settings.json
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Install default supported themes
-code --install-extension enkia.tokyo-night
+mkdir -p ~/.config/Code/User
+cp "$SCRIPT_DIR/../configs/vscode.json" ~/.config/Code/User/settings.json
