@@ -1,32 +1,21 @@
-#!/bin/bash
-
-# Main installation script for Ubuntu environment setup
-echo "Starting Ubuntu environment setup..."
-
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Run desktop installers
-echo "Running desktop installers..."
-for installer in "$SCRIPT_DIR/application/"*.sh; do
-    if [ -f "$installer" ]; then
-        echo "Running installer: $installer"
-        source "$installer"
-    fi
-done
+# Desktop software and tweaks will only be installed if we're running Gnome
+if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
+  # Ensure computer doesn't go to sleep or lock while installing
+  gsettings set org.gnome.desktop.screensaver lock-enabled false
+  gsettings set org.gnome.desktop.session idle-delay 0
 
-echo "Desktop installers completed!"
+  echo "Installing terminal and desktop tools..."
 
-# Check if gum is available for confirmation
-if command -v gum &> /dev/null; then
-    # Logout to pickup changes
-    gum confirm "Ready to reboot for all settings to take effect?" && sudo reboot
+  # Install terminal tools
+  source "$SCRIPT_DIR/terminal.sh"
+
+  # Revert to normal idle and lock settings
+  gsettings set org.gnome.desktop.screensaver lock-enabled true
+  gsettings set org.gnome.desktop.session idle-delay 300
 else
-    echo "Installation completed!"
-    echo "Note: A reboot is recommended for all settings to take effect."
-    read -p "Would you like to reboot now? (y/N): " -n 1 -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        sudo reboot
-    fi
+  echo "Only installing terminal tools..."
+  source ~/.local/share/omakub/install/terminal.sh
 fi
