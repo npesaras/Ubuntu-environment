@@ -7,10 +7,10 @@ if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
   gsettings set org.gnome.desktop.screensaver lock-enabled false
   gsettings set org.gnome.desktop.session idle-delay 0
 
-  echo "Installing terminal and desktop tools..."
+  echo "Installing Applications..."
 
-  # Install terminal tools
-  source "$SCRIPT_DIR/terminal.sh"
+  # Install Applications
+  source "$SCRIPT_DIR/application/install.sh"
 
   # Revert to normal idle and lock settings
   gsettings set org.gnome.desktop.screensaver lock-enabled true
