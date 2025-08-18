@@ -3,7 +3,8 @@
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Run desktop installers
+# Run all installers in the directory
+# 
 for installer in "$SCRIPT_DIR/"*.sh; do 
     if [ -f "$installer" ] && [ "$installer" != "$0" ]; then
         echo "Running installer: $(basename "$installer")"
