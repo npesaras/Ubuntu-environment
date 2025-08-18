@@ -10,7 +10,7 @@ if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
   echo "Installing Applications..."
 
   # Install Applications
-  source "$SCRIPT_DIR/application/install.sh"
+  source "$SCRIPT_DIR/applications/install.sh"
 
   # Revert to normal idle and lock settings
   gsettings set org.gnome.desktop.screensaver lock-enabled true
