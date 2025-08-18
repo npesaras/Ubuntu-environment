@@ -15,3 +15,12 @@ rm -rf iafonts.zip iaFonts
 
 fc-cache
 cd -
+
+# Install DankMono-Regular.otf from project directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -f "$SCRIPT_DIR/../DankMono-Regular.otf" ]; then
+	cp "$SCRIPT_DIR/../DankMono-Regular.otf" ~/.local/share/fonts/
+	echo "Installed DankMono-Regular.otf"
+else
+	echo "DankMono-Regular.otf not found in project directory."
+fi
