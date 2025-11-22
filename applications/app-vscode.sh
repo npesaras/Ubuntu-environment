@@ -22,7 +22,6 @@ rm -f packages.microsoft.gpg
 # Return to the previous directory
 cd -
 
-sudo apt update -qq
 
 sudo apt install -y code
 
