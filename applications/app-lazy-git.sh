@@ -6,4 +6,4 @@ if command -v lazygit > /dev/null 2>&1; then
     exit 0
 fi
 
-sudo apt install lazygit
+sudo apt install -y lazygit
