@@ -3,6 +3,24 @@
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# Setting Up the Environment
+echo "Setting up the environment..."
+
+sudo apt update -y -qq
+
+sudo apt upgrade -y -qq
+
+# install curl
+sudo apt install curl
+
+# install UV Python Package Manager
+if command -v uv > /dev/null 2>&1; then
+    echo "UV is already installed, skipping..."
+else
+    echo "Installing UV Python Package Manager..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+
 # Ensure computer doesn't go to sleep or lock while installing (GNOME only)
 case "$XDG_CURRENT_DESKTOP" in
   *GNOME*)
