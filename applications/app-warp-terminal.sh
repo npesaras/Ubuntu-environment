@@ -10,6 +10,4 @@ curl -fsSL https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor -o /etc
 
 echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" | sudo tee /etc/apt/sources.list.d/warpdotdev.list
 
-sudo apt update -qq
-
 sudo apt install -y warp-terminal   
