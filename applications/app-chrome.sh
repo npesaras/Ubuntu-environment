@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 # Browse the web with the most popular browser. See https://www.google.com/chrome/
 
 # Check if Chrome is already installed
-if command -v google-chrome &> /dev/null; then
+if command -v google-chrome > /dev/null 2>&1; then
     echo "Google Chrome is already installed, skipping..."
     exit 0
 fi
