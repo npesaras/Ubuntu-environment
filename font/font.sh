@@ -21,3 +21,5 @@ cp "$SCRIPT_DIR/DankMono-Regular.otf" ~/.local/share/fonts/
 fc-cache -fv
 
 echo "Dank Mono Regular font installed successfully!"
+
+cd -
