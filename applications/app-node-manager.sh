@@ -1,14 +1,5 @@
 #!/bin/sh
 
-# Install curl if not already installed
-if ! command -v curl > /dev/null 2>&1; then
-    echo "curl is not installed, installing curl..."
-
-    sudo apt update -qq
-
-    sudo apt install -qq curl
-fi
-
 # Set NVM directory
 export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 
