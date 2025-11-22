@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check if VS Code is already installed
-if command -v code &> /dev/null; then
+if command -v code > /dev/null 2>&1; then
     echo "VS Code is already installed, skipping..."
     exit 0
 fi
