@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# this script installs the Brave browser on a Debian-based system
-
 # Check if Brave is already installed
 if command -v brave-browser > /dev/null 2>&1; then
     echo "Brave browser is already installed, skipping..."
