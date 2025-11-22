@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 # Main installation script for Ubuntu environment setup
 echo "Starting Ubuntu environment setup..."
 
 # Get the directory where this script is located
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Run desktop installers
 echo "Running desktop installers..."
