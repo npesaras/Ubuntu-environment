@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check if Warp is already installed
-if command -v warp-terminal &> /dev/null; then
+if command -v warp-terminal > /dev/null 2>&1; then
     echo "Warp Terminal is already installed, skipping..."
     exit 0
 fi
