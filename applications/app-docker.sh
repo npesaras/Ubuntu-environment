@@ -6,7 +6,7 @@ else
     echo "Docker is installed"
 fi
 
-# Ask user if they want to install Docker
+
 printf "Do you want to install Docker? (y/N): "
 read -r REPLY
 echo
