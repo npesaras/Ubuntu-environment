@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 # Install curl if not already installed
-if ! command -v curl &> /dev/null; then
+if ! command -v curl > /dev/null 2>&1; then
     echo "curl is not installed, installing curl..."
 
     sudo apt update -qq
