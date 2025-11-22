@@ -1,0 +1,44 @@
+{
+	"servers": {
+		"appwrite-api": {
+			"command": "uvx",
+			"args": [
+				"mcp-server-appwrite",
+				"--databases",
+				"--users"
+			],
+			"env": {
+				"APPWRITE_PROJECT_ID": "APPWRITE_PROJECT_ID",
+				"APPWRITE_API_KEY": "APPWRITE_API_KEY",
+				"APPWRITE_ENDPOINT": "APPWRITE_ENDPOINT"
+			},
+			"type": "stdio"
+		},
+		"Vercel": {
+			"url": "https://mcp.vercel.com",
+			"type": "http"
+		},
+		"material-ui": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"@mui/mcp@latest"
+			]
+		},
+		"firebase": {
+			"type": "stdio",
+			"command": "npx",
+			"args": ["-y", "firebase-tools@latest", "mcp"]
+		},
+		"shadcn": {
+			"command": "npx",
+			"args": ["shadcn@latest", "mcp"]
+    	},
+		"context7": {
+			"type": "stdio",
+			"command": "npx",
+			"args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-523e6b19-79a8-47f0-8bbd-3b936e2531ae"]
+    	}
+	}
+}
