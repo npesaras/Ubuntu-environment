@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Obsidian is a multi-platform note taking application. See https://obsidian.md
-
 # Check if Obsidian is already installed
 if command -v obsidian > /dev/null 2>&1; then
     echo "Obsidian is already installed, skipping..."
