@@ -48,5 +48,40 @@
   "update.mode": "none",
   "extensions.ignoreRecommendations": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.smartRelativeLine": true,
+  "vim.leader": "<Space>",
+  "vim.hlsearch": true,
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["leader", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.handleKeys":{
+    "<C-f>": false,
+    "<C-a>": false,
+    "<C-w>": false,
+    "<C-c>": false
+  }
 }
