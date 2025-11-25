@@ -8,7 +8,7 @@ fi
 
 cd /tmp
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+curl -fsSLo google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
